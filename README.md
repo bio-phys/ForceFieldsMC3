@@ -6,4 +6,4 @@ The force field parameters presented in the manuscript "**Structural Insights on
 
 
 ## Introduction
-We have developed force parameters for ionizable Dlin-MC3-DMA lipid in Cationic and Neutral States. The parameters are developed according to the AMBER Lipid17 forcefield protocol in combination with TIP3P water model. Therefore, it is compatable with the AMBER Lipid, Nucleic Acid and Protein force fields.
+We have developed force parameters for ionizable Dlin-MC3-DMA lipid in Cationic and Neutral States. The parameters are developed according to the AMBER Lipid17 forcefield protocol in combination with TIP3P water model. Therefore, it is compatible with the AMBER Lipid, Nucleic Acid and Protein force fields.
