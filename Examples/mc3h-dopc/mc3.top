@@ -1,0 +1,53 @@
+;
+;	File 'dna.top' was generated
+;	By user: ibmohd (32260)
+;	On host: tbsl017
+;	At date: Mon Jul 22 10:32:14 2019
+;
+;	This is a standalone topology file
+;
+;	Created by:
+;	                    :-) GROMACS - gmx pdb2gmx, 2018.1 (-:
+;	
+;	Executable:   /Modules/Data/gromacs2018/install/2018.1/bin/gmx
+;	Data prefix:  /Modules/Data/gromacs2018/install/2018.1
+;	Working dir:  /STORAGE/ibmohd/DATA/DNA-Mica/CIO
+;	Command line:
+;	  gmx pdb2gmx -f nuc.pdb -ff amber99bsc1 -o dna.gro -p dna.top
+;	Force field was read from current directory or a relative path - path added.
+;
+
+; Include forcefield parameters
+#include "../ff/amber_na.ff/forcefield.itp"
+#include "../ff/nschwierz.ff/ff_ions.itp"
+#include "../ff/Lipid17-dopc.ff/ffnonbonded_lipid17.itp"
+#include "../ff/Lipid17-dopc.ff/mc3_cationic.itp";
+#include "../ff/Lipid17-dopc.ff/dopc.itp";
+
+
+#include "../ff/amber_na.ff/tip3p.itp"
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1     2    5    1   100.00
+#endif
+
+; Include topology for ions
+
+#include "../ff/nschwierz.ff/ions.itp"
+
+[ system ]
+; Name
+Protein in water
+
+[ molecules ]
+; Compound        #mols
+MCH	         30
+DOPC		 170
+SOL         14294
+NIO              14
+CXY              14
+NIO              24
+CXY              54

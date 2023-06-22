@@ -1,0 +1,41 @@
+;
+;	File 'topol.top' was generated
+;	By user: nschwierz (1000)
+;	On host: neuton
+;	At date: Wed Jan  6 13:04:12 2016
+;
+;	This is a standalone topology file
+;
+;	It was generated using program:
+;	pdb2gmx - VERSION 4.6.1
+;
+;	Command line was:
+;	pdb2gmx -f Test-dimer-GG.pdb 
+;
+;	Force field was read from current directory or a relative path - path added.
+;
+
+; Include forcefield parameters
+#include "./amber14sb.ff/forcefield.itp"
+
+; Include forcefield parameters for ion and water
+#include "./ff_ions.itp"
+
+#include "./ions.itp"
+#include "posres-ions.itp"
+
+
+; Include water topology
+#include "./amber14sb.ff/tip3p.itp"
+
+[ system ]
+; Name
+Ion in water
+
+[ molecules ]
+; Compound        #mols
+SOL         2123
+Mg2              19
+CXY              38
+
+

@@ -1,0 +1,71 @@
+;
+;	File 'dna.top' was generated
+;	By user: ibmohd (32260)
+;	On host: tbsl017
+;	At date: Mon Jul 22 10:32:14 2019
+;
+;	This is a standalone topology file
+;
+;	Created by:
+;	                    :-) GROMACS - gmx pdb2gmx, 2018.1 (-:
+;	
+;	Executable:   /Modules/Data/gromacs2018/install/2018.1/bin/gmx
+;	Data prefix:  /Modules/Data/gromacs2018/install/2018.1
+;	Working dir:  /STORAGE/ibmohd/DATA/DNA-Mica/CIO
+;	Command line:
+;	  gmx pdb2gmx -f nuc.pdb -ff amber99bsc1 -o dna.gro -p dna.top
+;	Force field was read from current directory or a relative path - path added.
+;
+
+; Include forcefield parameters
+#include "../ff/amber_na.ff/forcefield.itp"
+#include "../ff/nschwierz.ff/ff_ions.itp"
+#include "../ff/Lipid17-dopc.ff/ffnonbonded_lipid17.itp"
+#include "../ff/Lipid17-dopc.ff/dopc.itp";
+#ifdef Lipid1
+#include "../ff/flat_lipid1.itp"
+#endif
+
+
+#include "../ff/Lipid17-dopc.ff/mc3_neutral.itp";
+
+#ifdef Lipid2
+#include "../ff/flat_lipid2.itp"
+#endif
+
+#include "../ff/amber_na.ff/tip3p.itp"
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+; flat bottom potential on water
+;  i funct       fcx        fcy        fcz
+   1     2    5    1   100.00
+#endif
+
+
+
+; Include topology for ions
+
+#include "../ff/nschwierz.ff/ions.itp"
+#ifdef POSRES_IONS
+[ position_restraints ]
+;  i funct      fcx    fcy        fcz
+   1     1      1000   1000.00   1000.000
+  ; 2     1      500   500.00   500.000
+#endif
+
+
+
+[ system ]
+; Name
+Protein in water
+
+[ molecules ]
+; Compound        #mol
+DOPC		 170
+MC               30
+SOL         14520
+NIO              40
+CXY              40
+
