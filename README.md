@@ -6,7 +6,7 @@ Here, we present the AMBER compatible force field parameters reported in the  ma
 
 
 ## Introduction
-We have developed force parameters for ionizable Dlin-MC3-DMA lipid in cationic and neutral States. The parameters are developed according to the AMBER Lipid17 forcefield protocol in combination with TIP3P water model. Therefore, it is compatible with the AMBER Lipid, Nucleic Acid and Protein force fields. Here we provide Gromacs itp files for cationic and neutral MC3. 
+We have developed force parameters for ionizable Dlin-MC3-DMA lipid in cationic and neutral states. The parameters are developed according to the AMBER Lipid17 forcefield protocol in combination with TIP3P water model. Therefore, it is compatible with the AMBER Lipid, Nucleic Acid and Protein force fields. Here we provide Gromacs itp files for cationic and neutral MC3. 
 ## Example
 The example directory contains two example setup: (i) `mc3-dopc` which has 15 % neutral MC3 with 85 % DOPC (ii) `mc3h-dopc` which has 15 % cationic MC3 with 85% DOPC.
 To run the setup just run the provided bash script in the respective directories. `sh run.sh` 
